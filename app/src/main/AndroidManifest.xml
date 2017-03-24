@@ -12,15 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.PokemonListActivity">
+        <activity android:name=".pokemon.MainActivity"
+            android:label="Pokemon List">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.PokemonDetailsActivity"></activity>
-        <activity android:name=".activities.BaseActivity"/>
+        <activity android:name=".pokemon.details.PokemonDetailsActivity"
+            android:label="@string/pokemon_name_temp"/>
+        <activity android:name=".base.BaseActivity"/>
     </application>
 
 </manifest>

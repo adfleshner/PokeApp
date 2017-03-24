@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">PokeApp</string>
+    <string name="pokemon_name_temp">missingno</string>
+    <string name="pokemon_types_temp">unknown</string>
+    <string name="pokemon_weight_temp">unknown</string>
+    <string name="pokemon_height_temp">unknown</string>
+
+
+    <string name="pokemon_name">Name: %1$s</string>
+    <string name="pokemon_type">Type(s): %1$s</string>
+    <string name="pokemon_Weight">Weight: %1$f kg</string>
+    <string name="pokemon_Height">Height: %1$f m</string>
+
 </resources>
