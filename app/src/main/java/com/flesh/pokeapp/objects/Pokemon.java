@@ -18,15 +18,16 @@ public class Pokemon implements Parcelable {
     private List<PokemonType> types;
     private PokemonSprite sprites;
 
-    public double getWeight() {
+    public String getWeight() {
         double temp = Double.parseDouble(weight);
-        return temp/10;
+        return String.format("%.2f",temp/10);
     }
 
 
-    public double getHeight() {
+    public String getHeight() {
         double temp = Double.parseDouble(height);
-        return temp/10;
+
+        return String.format("%.2f",temp/10);
     }
 
 

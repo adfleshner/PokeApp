@@ -1,8 +1,7 @@
-package com.flesh.pokeapp.pokemon;
+package com.flesh.pokeapp;
 
 import android.os.Bundle;
 
-import com.flesh.pokeapp.R;
 import com.flesh.pokeapp.base.BaseActivity;
 import com.flesh.pokeapp.pokemon.details.NoPokemonFragment;
 import com.flesh.pokeapp.pokemon.details.PokemonDetailsFragment;
@@ -19,6 +18,7 @@ public class MainActivity extends BaseActivity implements PokemonListFragment.On
         setContentView(R.layout.activity_main);
         boolean isTablet = getResources().getBoolean(R.bool.isTablet);
         if(isTablet){
+            mBar.setTitle(R.string.app_name);
             if (savedInstanceState == null) {
                 getSupportFragmentManager()
                         .beginTransaction()
@@ -30,6 +30,7 @@ public class MainActivity extends BaseActivity implements PokemonListFragment.On
                         .commit();
             }
         }else {
+            mBar.setTitle(R.string.pokemon_list);
             if (savedInstanceState == null) {
                 getSupportFragmentManager()
                         .beginTransaction()

@@ -104,6 +104,7 @@ public class PokemonListFragment extends BaseFragment implements BaseView<Pokemo
 
     @Override
     public void onLoaded(PokemonResult data) {
+        mResult = data;
         //create the adapter
         PokemonAdapter adapter = new PokemonAdapter(getContext(), data);
         //set the onclickListener
