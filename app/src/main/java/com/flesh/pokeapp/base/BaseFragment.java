@@ -5,7 +5,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 
+import com.flesh.pokeapp.PokeAppApplication;
 import com.flesh.pokeapp.web.PokemonService;
+
+import javax.inject.Inject;
 
 /**
  * Created by aaronfleshner on 3/23/17.
@@ -13,12 +16,12 @@ import com.flesh.pokeapp.web.PokemonService;
 
 public class BaseFragment extends Fragment {
 
-    protected PokemonService pokemon;
+    @Inject public PokemonService pokemon;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pokemon = new PokemonService();
+        ((PokeAppApplication)getActivity().getApplication()).objectGraph.inject(this);
     }
 
     public void showError(){

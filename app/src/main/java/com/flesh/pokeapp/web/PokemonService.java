@@ -3,9 +3,9 @@ package com.flesh.pokeapp.web;
 import com.flesh.pokeapp.objects.Pokemon;
 import com.flesh.pokeapp.objects.PokemonResult;
 
+import javax.inject.Inject;
+
 import retrofit2.Callback;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by aaronfleshner on 3/23/17.
@@ -15,12 +15,9 @@ public class PokemonService {
 
     private PokemonApi mPokemonApi;
 
-    public PokemonService() {
-        Retrofit pokemonRetrofit = new Retrofit.Builder()
-                .baseUrl("http://pokeapi.co")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        mPokemonApi = pokemonRetrofit.create(PokemonApi.class);
+    @Inject
+    public PokemonService(PokemonApi pokemonApi) {
+       mPokemonApi = pokemonApi;
     }
 
     public void getAllFirstGenPokemon(Callback<PokemonResult> callback) {

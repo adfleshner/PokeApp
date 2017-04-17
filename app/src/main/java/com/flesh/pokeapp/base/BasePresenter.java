@@ -14,5 +14,4 @@ public class BasePresenter<D,T> {
         this.mDataProvider = webService;
     }
 
-
 }
